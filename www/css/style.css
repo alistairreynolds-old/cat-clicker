@@ -1,0 +1,23 @@
+body{
+	font-family:'helvetica','verdana',sans-serif;
+}
+
+ul{
+	background-color: #333;
+	padding:10px;
+	width
+}
+
+li{
+	cursor: pointer;
+	list-style:none;
+	height:20px;
+	background-color: #333;
+	width:100px;
+	color:#fff;
+	margin-left:0px;
+}
+
+li:hover{
+	color:#88f;
+}
