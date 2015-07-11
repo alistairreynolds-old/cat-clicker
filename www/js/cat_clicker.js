@@ -1,34 +1,73 @@
-// Store cats in json
-var cats = [
-	{"name": "bob", clicks: 0},
-	{"name": "susan", clicks: 0},
-	{"name": "charlie", clicks: 0},
-	{"name": "chris", clicks: 0},
-	{"name": "betty", clicks: 0},
-	{"name": "billy", clicks: 0}
-];
+$(function(){
+	var model = {
+		catsList: {cats: []},
+		curCat : 0
+	}
 
-// generate cats list
-for(i=0; i<cats.length; i++){
-	var html = "<li class='cat-item' onclick='showCat(" + i + ")'>" + cats[i].name + "</li>";
-	$("#cats-list").append(html);
-}
+	var controller = {
+		getCats: function(){
+			return model.catsList.cats;
+		},
 
-showCat(0);
+		getCat: function(cat){
+			return model.catsList.cats[cat];
+		},
 
-// Update the json cat array and update the html
-$(".cat-img").click(function(){
-	var catID = $(this).attr("name");
-	console.log(catID);
-	cats[catID].clicks ++;
-	$(this).next().html("Clicks: " + cats[catID].clicks);
-});
+		addCat: function(name, img){
+			model.catsList.cats.push({"name": name, "imgsrc": img, clicks: 0});
+		},
 
-// Shows the passed cat number
-function showCat(cat){
-	$("#cats-shell").children("h1").html(cats[cat].name);
-	$("#cats-shell").children("h1").attr("name", cat);
-	$("#cats-shell").children("img").attr("src","img/cat-" + cat + ".jpg");
-	$("#cats-shell").children("img").attr("name", cat);
-	$("#cats-shell").children("h3").html("Clicks: " + cats[cat].clicks);
-};
+		getCurrentCat: function(){
+			return model.curCat;
+		},
+
+		setCurrentCat: function(cat){
+			model.curCat = cat;
+		},
+
+		incCatClicks: function(cat){
+			model.catsList.cats[cat].clicks ++;
+		}
+	}
+
+
+	var view = {
+
+		showCat: function(cat_id){
+			controller.setCurrentCat(cat_id);
+			var cat = controller.getCat(cat_id);
+			$("#cats-shell").children("h1").html(cat.name);
+			$("#cats-shell").children("img").attr("src","img/" + cat.imgsrc);
+			$("#cats-shell").children("h3").html("Clicks: " + cat.clicks);
+		},
+
+		init: function(){
+
+			var cats = controller.getCats();
+			for(i=0; i < cats.length; i++){
+				var html = "<li class='cat-item' name='" + i + "'>" + cats[i].name + "</li>";
+				$("#cats-list").append(html);
+			}
+
+			$(".cat-img").click(function(){
+				var catID = controller.getCurrentCat();
+				controller.incCatClicks(catID);
+				$(this).next().html("Clicks: " + controller.getCat(catID).clicks);
+			});
+
+			$(".cat-item").click(function(){
+				view.showCat($(this).attr('name'));
+			});
+
+			this.showCat(0);
+		},
+	}
+
+	controller.addCat("bob","bob.jpg");
+	controller.addCat("susan","susan.jpg");
+	controller.addCat("charlie","charlie.jpg");
+	controller.addCat("chris","chris.jpg");
+	controller.addCat("betty","betty.jpg");
+	controller.addCat("billy","billy.jpg");
+	view.init();
+})
