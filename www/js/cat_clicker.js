@@ -27,39 +27,44 @@ $(function(){
 
 		incCatClicks: function(cat){
 			model.catsList.cats[cat].clicks ++;
+			//console.log(this.getCat(cat).clicks);
+		},
+
+		init: function(){
+			view.showCat(0);
+			view.showList();
 		}
 	}
 
 
 	var view = {
-
 		showCat: function(cat_id){
 			controller.setCurrentCat(cat_id);
 			var cat = controller.getCat(cat_id);
-			$("#cats-shell").children("h1").html(cat.name);
-			$("#cats-shell").children("img").attr("src","img/" + cat.imgsrc);
-			$("#cats-shell").children("h3").html("Clicks: " + cat.clicks);
+			$('#cats-shell').html();
+			$("#cat-name").html(cat.name);
+			$("#cat-img").attr("src","img/" + cat.imgsrc);
+			$("#cat-clicks").html("Clicks: " + cat.clicks);
+
 		},
 
-		init: function(){
-
+		showList: function(){
 			var cats = controller.getCats();
+			$('#cats-list').html("");
 			for(i=0; i < cats.length; i++){
 				var html = "<li class='cat-item' name='" + i + "'>" + cats[i].name + "</li>";
 				$("#cats-list").append(html);
+
 			}
-
-			$(".cat-img").click(function(){
-				var catID = controller.getCurrentCat();
-				controller.incCatClicks(catID);
-				$(this).next().html("Clicks: " + controller.getCat(catID).clicks);
-			});
-
 			$(".cat-item").click(function(){
 				view.showCat($(this).attr('name'));
 			});
-
-			this.showCat(0);
+			$("#cat-img").click(function(){
+				var cat_id = controller.getCurrentCat();
+				console.log(cat_id);
+				controller.incCatClicks(cat_id);
+				$(this).next().html("Clicks: " + controller.getCat(cat_id).clicks);
+			});
 		},
 	}
 
@@ -69,5 +74,6 @@ $(function(){
 	controller.addCat("chris","chris.jpg");
 	controller.addCat("betty","betty.jpg");
 	controller.addCat("billy","billy.jpg");
-	view.init();
+	controller.init();
+
 })

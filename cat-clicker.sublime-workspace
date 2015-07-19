@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"cats",
+				"catsList"
+			],
+			[
+				"cat",
+				"cats"
+			],
+			[
 				"getEleme",
 				"getElementsByClassName"
 			],
@@ -55,7 +63,7 @@
 			"file": "www/index.html",
 			"settings":
 			{
-				"buffer_size": 384,
+				"buffer_size": 379,
 				"line_ending": "Windows"
 			}
 		},
@@ -63,7 +71,15 @@
 			"file": "www/js/cat_clicker.js",
 			"settings":
 			{
-				"buffer_size": 995,
+				"buffer_size": 1944,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/Documents/Udacity/Front-end-web-dev/projects/3-frogger/www/js/resources.js",
+			"settings":
+			{
+				"buffer_size": 3889,
 				"line_ending": "Windows"
 			}
 		},
@@ -72,6 +88,14 @@
 			"settings":
 			{
 				"buffer_size": 261,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/Documents/Udacity/Front-end-web-dev/lessons/ud989-retain/js/retain.js",
+			"settings":
+			{
+				"buffer_size": 1646,
 				"line_ending": "Windows"
 			}
 		}
@@ -232,8 +256,9 @@
 	},
 	"file_history":
 	[
-		"/E/Documents/Udacity/Front-end-web-dev/lessons/ud989-retain/js/retain.js",
 		"/E/Documents/Udacity/Front-end-web-dev/lessons/ud989-retain/index.html",
+		"/E/Documents/Udacity/Front-end-web-dev/lessons/cat-clicker/cat-clicker.sublime-project",
+		"/E/Documents/Udacity/Front-end-web-dev/lessons/ud989-retain/js/retain.js",
 		"/E/Documents/Udacity/Front-end-web-dev/lessons/cat-clicker/www/css/style.css",
 		"/E/Documents/Udacity/Front-end-web-dev/lessons/cat-clicker/www/js/cat_clicker.js",
 		"/E/Documents/Udacity/Front-end-web-dev/lessons/cat-clicker/www/index.html",
@@ -349,6 +374,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"showCat",
 			"'",
 			"pizzasContainer",
 			"pizzacontainer6",
@@ -387,7 +413,7 @@
 			"src=\"images_src"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -424,7 +450,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -432,15 +458,15 @@
 					"file": "www/index.html",
 					"settings":
 					{
-						"buffer_size": 384,
+						"buffer_size": 379,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								233,
-								233
+								243,
+								243
 							]
 						],
 						"settings":
@@ -459,7 +485,34 @@
 					"file": "www/js/cat_clicker.js",
 					"settings":
 					{
-						"buffer_size": 995,
+						"buffer_size": 1944,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								475,
+								475
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 393.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/E/Documents/Udacity/Front-end-web-dev/projects/3-frogger/www/js/resources.js",
+					"settings":
+					{
+						"buffer_size": 3889,
 						"regions":
 						{
 						},
@@ -473,7 +526,8 @@
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -482,7 +536,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "www/css/style.css",
 					"settings":
 					{
@@ -493,14 +547,42 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								215,
+								215
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/E/Documents/Udacity/Front-end-web-dev/lessons/ud989-retain/js/retain.js",
+					"settings":
+					{
+						"buffer_size": 1646,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14,
+								14
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
