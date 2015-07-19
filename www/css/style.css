@@ -21,3 +21,11 @@ li{
 li:hover{
 	color:#88f;
 }
+
+#admin{
+	display:block;
+}
+
+#admin-header{
+	cursor:pointer;
+}

@@ -10,6 +10,18 @@
 		<img width='500px' id='cat-img' src='' />
 		<h3 id='cat-clicks'>Clicks: 0</h3>
 	</div>
+	<h3 id="admin-header">Admin Area</h3>
+	<div id="admin">
+		<form name="admin-info">
+			<label for="cat-name">Name</label>
+			<input type="text" value="" name="cat-name"/><br />
+			<label for="cat-name">Image</label>
+			<input type="text" value="" name="cat-image"/><br />
+			<label for="cat-name">Clicks</label>
+			<input type="text" value="" name="cat-clicks"/><br />
+			<input type="button" onclick="controller.updateCat()" value="Submit" />
+		</form>
+	</div>
 	<script src="js/lib/jquery.min.js"></script>
 	<script src="js/cat_clicker.js"></script>
 </body>
